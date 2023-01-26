@@ -3,7 +3,7 @@ import read from './reader.js';
 
 export default class GameSavingLoader {
   load() {
-    read()
+    return read()
       .then((data) => {
         const getData = data;
         return getData;
