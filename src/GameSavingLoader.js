@@ -1,5 +1,6 @@
 import json from './parser.js';
 import read from './reader.js';
+import GameSaving from './GameSaving.js';
 
 export default class GameSavingLoader {
   load() {
@@ -14,7 +15,7 @@ export default class GameSavingLoader {
             const saving = JSON.parse(readData);
             return saving;
           });
-      });
+      })
   }
 }
 
