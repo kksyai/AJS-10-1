@@ -3,19 +3,10 @@ import read from './reader.js';
 import GameSaving from './GameSaving.js';
 
 export default class GameSavingLoader {
-  load() {
+  static load() {
     return read()
-      .then((data) => {
-        const getData = data;
-        return getData;
-      })
-      .then((getData) => {
-        json(getData)
-          .then((readData) => {
-            const saving = JSON.parse(readData);
-            return saving;
-          });
-      })
+      .then((data) => json(data)
+        .then((saving) => new GameSaving(JSON.parse(saving))));
   }
 }
 
